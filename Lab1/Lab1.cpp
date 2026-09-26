@@ -95,9 +95,6 @@ double matNormInf(const Matrix& A) {
     return m;
 }
 
-// ============================================================
-// 1.1 LU-разложение
-// ============================================================
 void luDecomposition(Matrix A, Matrix& L, Matrix& U, Vector& perm, int& swaps) {
     int n = (int)A.size();
     U = A;
@@ -209,9 +206,6 @@ void task_11() {
     printMatrix(inv, "A^(-1)");
 }
 
-// ============================================================
-// 1.2 Метод прогонки
-// ============================================================
 Vector thomasSolve(const Vector& a, const Vector& b, const Vector& c, const Vector& d) {
     int n = (int)b.size();
     Vector cc(n, 0.0), dd(n, 0.0), x(n, 0.0);
@@ -249,9 +243,6 @@ void task_12() {
     printVector(x, "x");
 }
 
-// ============================================================
-// 1.3 Простые итерации и Зейдель
-// ============================================================
 void toIterForm(const Matrix& A, const Vector& b, Matrix& C, Vector& d) {
     int n = (int)A.size();
     C.assign(n, Vector(n, 0.0));
@@ -337,9 +328,6 @@ void task_13() {
     cout << "Iterations: " << it2 << "\n";
 }
 
-// ============================================================
-// 1.4 Метод вращений Якоби
-// ============================================================
 void jacobiEigen(Matrix A, double eps, Vector& eigenValues, Matrix& V, int& iters, Vector& history) {
     int n = (int)A.size();
     for (int i = 0; i < n; ++i)
@@ -430,9 +418,6 @@ void task_14() {
         cout << setw(4) << k << "   " << scientific << setprecision(6) << history[k] << "\n";
 }
 
-// ============================================================
-// 1.5 QR-разложение и QR-алгоритм
-// ============================================================
 void qrDecomposition(const Matrix& A, Matrix& Q, Matrix& R) {
     int n = (int)A.size();
     R = A;
@@ -544,9 +529,6 @@ void task_15() {
     cout << "QR iterations: " << iters << "\n";
 }
 
-// ============================================================
-// Меню
-// ============================================================
 int main() {
     cout << fixed << setprecision(6);
 
